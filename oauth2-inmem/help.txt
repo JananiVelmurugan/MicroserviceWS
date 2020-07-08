@@ -1,0 +1,24 @@
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
+https://github.com/arocketman/Spring-oauth2-jpa-example/blob/master/src/main/java/com/github/arocketman/config/AuthorizationServerConfig.java
+https://www.youtube.com/watch?v=0pD7YeTAUkk
+
+Execution Steps:-
+1)To request access_token  
+POST
+http://localhost:8080/oauth/token?grant_type=password&username=user&password=user 
+Basic Auth
+username=my-trusted-client
+password=secret
+
+copy the access_token in the output body
+{
+    "access_token": "3a95fe57-fcde-41f3-8abb-c692aa3e3f5d",
+    "token_type": "bearer",
+    "expires_in": 4999,
+    "scope": "read write trust"
+}
+2)To access private
+GET
+http://localhost:8080/private?access_token=3a95fe57-fcde-41f3-8abb-c692aa3e3f5d
+
+
